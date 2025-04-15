@@ -1,0 +1,46 @@
+.page_grid {
+  display: grid;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.page_content {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+  width: min(100%, 1500px);
+  min-height: 100%;
+  margin: 0px auto 0px auto;
+  padding: 0px;
+}
+
+.page_background {
+  position: fixed;
+  background-color: rgb(190, 190, 190);
+  min-height: 100%;
+  min-width: 1500px;
+  z-index: -1;
+  margin: 0px;
+  padding: 0px;
+}
+.gradient_background {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(70, 130, 184);
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: -200;
+}

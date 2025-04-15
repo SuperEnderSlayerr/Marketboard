@@ -1,0 +1,44 @@
+.quest_value_card {
+	padding: 0.7rem;
+	display: inline-block;
+	text-align: center;
+}
+
+.quest_value_card > ul {
+	list-style-type: none;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	column-gap: 1rem;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+}
+
+.quest_value_card > ul > li > label {
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+}
+
+select {
+	width: 14rem;
+	padding: 0.3rem;
+	font-size: 1rem;
+}
+
+.dropdown_label, .number_input_label {
+	display: none;
+}
+
+.quest_value_output {
+	display: inline-block;
+	margin-top: 1rem;
+}
+
+.notes {
+	font-weight: normal;
+}

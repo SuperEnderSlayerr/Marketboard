@@ -1,0 +1,203 @@
+:root {
+  --header_background_color: #333333;
+  --background_color_one: gray;
+  --background_color_two: lightgray;
+  --background_color_three: black;
+  --title_font_color: white;
+  --subtitle_font_color: white;
+  --header_large_color: black;
+  --header_small_color: black;
+  --reading_text_color: black;
+  --emphasis_text_color: black;
+
+  --card_border_thickness: 10px;
+  --card_border_color: black;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+input {
+  display: block;
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(145, 198, 255);
+  border-radius: 6px;
+  position: relative;
+}
+
+input:valid {
+  border: 2px solid rgb(80, 214, 102);
+}
+
+textarea {
+  display: block;
+  min-width: 300px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 2px solid rgb(145, 198, 255);
+  border-radius: 6px;
+  position: relative;
+}
+
+textarea:valid {
+  border: 2px solid rgb(80, 214, 102);
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+button, .button_like_input {
+  display: block;
+  width: 150px;
+  padding: 5px 5px;
+  font-weight: bold;
+  color: rgb(56, 105, 158);
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: rgb(217, 235, 255);
+  border: 2px solid rgb(145, 198, 255);
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+button:hover, .button_like_input:hover {
+  background-color: rgb(145, 198, 255);
+}
+
+form:invalid button {
+  color: rgb(136, 136, 136);
+  background-color: rgb(204, 204, 204);
+  border: 2px solid rgb(192, 192, 192);
+  pointer-events: none;
+}
+
+label {
+  font-weight: bold;
+}
+
+label.instructions {
+  font-size: 0.75em;
+  font-weight: normal;
+}
+
+.loader {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: none;
+  margin: 15px auto;
+  position: relative;
+  color: rgb(70, 130, 184);
+  box-sizing: border-box;
+  animation: animloader 0.7s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: -14px 0 0 1px, 0 -14px 0 -1px, 14px 0 0 -1px, 0 14px 0 -1px;
+  }
+  25% {
+    box-shadow: -14px 0 0 -1px, 0 -14px 0 1px, 14px 0 0 -1px, 0 14px 0 -1px;
+  }
+  50% {
+    box-shadow: -14px 0 0 -1px, 0 -14px 0 -1px, 14px 0 0 1px, 0 14px 0 -1px;
+  }
+  75% {
+    box-shadow: -14px 0 0 -1px, 0 -14px 0 -1px, 14px 0 0 -1px, 0 14px 0 1px;
+  }
+  100% {
+    box-shadow: -14px 0 0 1px, 0 -14px 0 -1px, 14px 0 0 -1px, 0 14px 0 -1px;
+  }
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+
+  margin: 0px;
+  background-color: transparent;
+  box-shadow: 0;
+  padding: 0;
+  border: 0;
+
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+
+  border-bottom: 1em solid rgb(46, 84, 124);
+}
+
+.arrow-up:hover {
+  background-color: transparent;
+  border-bottom-color: rgb(0, 123, 255);
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+
+  margin: 0px;
+  background-color: transparent;
+  box-shadow: 0;
+  padding: 0;
+  border: 0;
+
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+
+  border-top: 1em solid rgb(138, 42, 42);
+}
+
+.arrow-down:hover {
+  background-color: transparent;
+  border-top-color: rgb(255, 0, 0);
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+
+  margin: 0px;
+  background-color: transparent;
+  box-shadow: 0;
+  padding: 0;
+  border: 0;
+
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+
+  border-left: 1em solid rgb(56, 105, 158);
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+
+  margin: 0px;
+  background-color: transparent;
+  box-shadow: 0;
+  padding: 0;
+  border: 0;
+
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+
+  border-right: 1em solid red;
+}

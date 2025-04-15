@@ -1,0 +1,120 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.enemies_list {
+	list-style-type: none;
+    padding: 0;
+}
+
+.single_enemy_input_card, .enemy_labels_list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+	border-radius: 10px;
+	align-items: center;
+	list-style-type: none;
+	padding: 0 0.6rem;
+}
+
+.single_enemy_input_card {
+	background-color: lightgray;
+	margin-top: 1rem;
+	box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.3);
+}
+
+.single_enemy_input_card > * {
+	height: 2rem;
+}
+
+.enemy_text_input {
+    width: 9.5rem;
+}
+
+.enemy_number_input_label {
+    width: 2.5rem;
+}
+
+.enemy_number_input_label_hp {
+	width: 3.5rem;
+}
+
+.enemy_number_input {
+    width: 2.5rem;
+    padding: 0.5rem;
+}
+
+[name=hp] {
+	width: 3.5rem;
+}
+
+.enemy_damage_input {
+	width: 8rem;
+	padding: 0 0.5rem;
+}
+
+.set_enemy_display_circle {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transition: background-color 0.3s ease;
+	margin-left: auto;
+}
+  
+.set_enemy_display_circle:hover {
+	background-color: lightgreen;
+}
+
+.set_enemy_display_arrow {
+	width: 0;
+	height: 0;
+	border-top: 0.45rem solid transparent;
+	border-bottom: 0.45rem solid transparent;
+	border-left: 1rem solid white;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-40%);
+}
+
+.remove_button {
+    width: 2rem;
+    height: 2rem;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	margin-left: auto;
+}
+
+.x_mark {
+    width: 1rem;
+    height: 0.15rem;
+    background-color: white;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.remove_button:hover {
+    background-color: darkred;
+}
+
+.remove_button:hover .x_mark {
+    background-color: white;
+}
