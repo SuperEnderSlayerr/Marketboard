@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import getAllPriceSheets from "../routes/get.js";
+import "./PriceSheets.css";
+import CityCard from "../cards/priceSheetCards/CityCard.js";
 
-function PriceSheets() {
+export default function PriceSheets() {
     const [priceData, setPriceData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -25,31 +27,10 @@ function PriceSheets() {
     if (error) return <div>{error}</div>;
 
     return (
-        <div className="price-sheets">
-            <h1>City Price Sheets</h1>
-            {Object.entries(priceData).map(([city, prices]) => (
-                <div key={city} className="city-section">
-                    <h2>{city}</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Item</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {Object.entries(prices).map(([item, price]) => (
-                                <tr key={item}>
-                                    <td>{item}</td>
-                                    <td>{price.toFixed(2)}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            ))}
-        </div>
+        <div className="city_card_container">
+		  {Object.entries(priceData).map(([city, prices]) => (
+			<CityCard key={city} city={city} prices={prices} />
+		  ))}
+		</div>
     );
 }
-
-export default PriceSheets;

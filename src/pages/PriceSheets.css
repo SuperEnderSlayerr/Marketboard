@@ -1,0 +1,5 @@
+.city_card_container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if there are too many cards */
+  justify-content: space-evenly; /* Evenly distribute space between cards */
+}

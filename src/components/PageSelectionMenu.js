@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./PageSelectionMenu.css"
 
-const pages = ["Rewards Calculator", "Combat Helper"]
+const pages = ["Price Sheets"];
 
 export default function PageSelectionMenu({ setPageToDisplay }) {
-	const [activeOption, setActiveOption] = useState("Rewards Calculator");
+	const [activeOption, setActiveOption] = useState("Price Sheets");
   
 	const handleOptionClick = (option) => {
 	  setActiveOption(option);

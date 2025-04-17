@@ -1,0 +1,17 @@
+.city_card {
+  padding: 0.7rem;
+  flex: 1;
+  margin: 0.5rem;
+}
+
+.city_card table {
+  width: 100%; /* Ensure the table takes up the full width of the card */
+}
+
+.city_card table td:last-child {
+  text-align: right; /* Align the prices to the right */
+}
+
+.city_card table th:last-child {
+  text-align: right; /* Align the header for prices to the right */
+}
