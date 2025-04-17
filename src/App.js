@@ -2,6 +2,7 @@ import PageBackground from "./PageBackground.js"
 import PageSelectionMenu from "./components/PageSelectionMenu.js";
 import CombatHelper from "./pages/CombatHelper.js";
 import RewardsCalculator from "./pages/RewardsCalculator.js";
+import PriceSheets from "./pages/PriceSheets.js";
 import { useState } from "react";
 
 export default function App() {
@@ -10,7 +11,7 @@ export default function App() {
 	const pageDisplay = () => {
 		switch (pageToDisplay) {
 		  case "Combat Helper":
-			return <CombatHelper />
+			return <PriceSheets />
 		  case "Rewards Calculator":
 			return <RewardsCalculator />
 		  default:
