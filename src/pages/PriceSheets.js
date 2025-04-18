@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import getAllPriceSheets from "../routes/get.js";
+import { getAllPriceSheets } from "../routes/gets.js";
 import "./PriceSheets.css";
 import CityCard from "../cards/priceSheetCards/CityCard.js";
 import InfoCard from "../cards/priceSheetCards/InfoCard.js";

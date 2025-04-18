@@ -9,7 +9,7 @@ const host = "http://localhost:" + port; //This will need to be updated with off
 
 console.log(host)
 
-export default async function getAllPriceSheets() {
+export async function getAllPriceSheets() {
     let data = [];
     try {
         const response = await axios.get(`${host}/api/prices`);
@@ -18,5 +18,16 @@ export default async function getAllPriceSheets() {
         console.error(error);
     }
     return data;
-
 }
+
+export async function getAllPlayerData() {
+    let data = [];
+    try {
+        const response = await axios.get(`${host}/api/player`);
+        data = response.data;
+    } catch (error) {
+        console.error(error);
+    }
+    return data;
+}
+
