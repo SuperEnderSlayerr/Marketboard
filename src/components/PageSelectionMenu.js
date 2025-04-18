@@ -1,7 +1,6 @@
 import { useState } from "react";
-import "./PageSelectionMenu.css"
-
-const pages = ["Price Sheets"];
+import "./PageSelectionMenu.css";
+import pages from "../AvailablePages.json";
 
 export default function PageSelectionMenu({ setPageToDisplay }) {
 	const [activeOption, setActiveOption] = useState("Price Sheets");

@@ -21,7 +21,7 @@
 
 .page_background {
   position: fixed;
-  background-color: rgb(0, 105, 148);
+  background-color: var(--background_color_one); /* Use the variable from Theme.css */
   min-height: 100%;
   min-width: 1500px;
   z-index: -1;
