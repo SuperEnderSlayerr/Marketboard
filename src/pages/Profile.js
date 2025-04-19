@@ -15,6 +15,7 @@ export default function PriceSheets() {
         const fetchPrices = async () => {
             try {
                 const data = await getAllPlayerData();
+				console.log(data);
                 setPlayerData(data);
                 setLoading(false);
             } catch (err) {

@@ -21,7 +21,7 @@ export async function getAllPriceSheets() {
 }
 
 export async function getAllPlayerData() {
-    let data = [];
+    let data = {};
     console.log("Getting all player data from server...");
     try {
         let info = {};
@@ -30,20 +30,16 @@ export async function getAllPlayerData() {
             method: 'get',
             maxBodyLength: Infinity,
             url: 'http://localhost:8080/api/player?searchName=Synn',
-            headers: { },
-            data : info
-    };
+            headers: {},
+            data: info
+        };
 
-axios.request(config)
-.then((response) => {
-  console.log(JSON.stringify(response.data));
-})
-.catch((error) => {
-  console.log(error);
-});
+        const response = await axios.request(config); // Use await here
+        data = response.data; // Update data after the request completes
+        console.log(data);
     } catch (error) {
         console.error(error);
     }
-    return data;
+    return data; // Ensure this returns after the request completes
 }
 

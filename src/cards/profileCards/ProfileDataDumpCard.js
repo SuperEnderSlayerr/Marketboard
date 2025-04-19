@@ -5,7 +5,7 @@ export default function ProfileDataDumpCard ({ data }) {
 
 	return (
 		<Card key={"q"} className="city_card">
-			{data}
+			{JSON.stringify(data)}
 		</Card>
 	)
 }
