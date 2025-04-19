@@ -1,37 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { getAllPlayerData } from "../routes/gets.js";
-import "./PriceSheets.css";
-import ProfileDataDumpCard from "../cards/profileCards/ProfileDataDumpCard.js";
+import "./Profile.css"; // Update to use Profile.css
+import BasicInfoCard from "../cards/profileCards/BasicInfoCard.js";
+import InventoryCard from "../cards/profileCards/InventoryCard.js";
+import FactoriesCard from "../cards/profileCards/FactoriesCard.js";
+import TransactionsCard from "../cards/profileCards/TransactionsCard.js";
+import ShipsCard from "../cards/profileCards/ShipsCard.js";
 
 const tempPlayerList = ["Synn", "Rad'num"];
 
-export default function PriceSheets() {
+export default function Profile() {
     const [playerData, setPlayerData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [selectedPlayer, setSelectedPlayer] = useState(tempPlayerList[0]); // State for selected player
+    const [selectedPlayer, setSelectedPlayer] = useState(tempPlayerList[0]);
 
     useEffect(() => {
-        const fetchPrices = async () => {
+        const fetchPlayerData = async () => {
             try {
                 const data = await getAllPlayerData();
-				console.log(data);
+                console.log(data);
                 setPlayerData(data);
                 setLoading(false);
             } catch (err) {
-                setError('Failed to fetch price data');
+                setError("Failed to fetch player data");
                 setLoading(false);
             }
         };
 
-        fetchPrices();
+        fetchPlayerData();
     }, []);
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
 
     const handlePlayerChange = (event) => {
-        setSelectedPlayer(event.target.value); // Update selected player
+        setSelectedPlayer(event.target.value);
     };
 
     return (
@@ -50,8 +54,20 @@ export default function PriceSheets() {
                     ))}
                 </select>
             </div>
-            <div className="data_dump_container">
-                <ProfileDataDumpCard data={playerData} />
+            <div className="cards_container">
+                <div className="row">
+                    <BasicInfoCard
+                        name={playerData.name}
+                        homePort={playerData["home port"]}
+                        gold={playerData.Gold}
+                    />
+                    <InventoryCard inventory={playerData.Inventory} />
+                </div>
+                <div className="row">
+                    <FactoriesCard factories={playerData.Factories} />
+                    <ShipsCard ships={playerData.Ships} />
+                    <TransactionsCard />
+                </div>
             </div>
         </div>
     );
