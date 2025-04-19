@@ -23,7 +23,9 @@ export async function getAllPriceSheets() {
 export async function getAllPlayerData() {
     let data = [];
     try {
-        const response = await axios.get(`${host}/api/player`);
+        const response = await axios.get(`${host}/api/player`, {
+            body: JSON.stringify({searchName: "Synn"})
+        });
         data = response.data;
     } catch (error) {
         console.error(error);

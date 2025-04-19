@@ -1,13 +1,6 @@
-.city_card_container {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping to the next row */
-  justify-content: start; /* Align cards to the start of the row */
-  gap: 1rem; /* Add spacing between rows and columns */
-}
-
 .city_card {
   padding: 0.7rem;
-  flex: 0 1 calc(20% - 1rem); /* Prevent cards from growing, with a base width of 20% minus gap */
+  flex: 1 1 calc(20% - 1rem); /* Prevent cards from growing, with a base width of 20% minus gap */
   margin: 0.5rem;
   min-width: 10rem; /* Prevent cards from becoming too small */
   box-sizing: border-box; /* Include padding and border in width calculation */
