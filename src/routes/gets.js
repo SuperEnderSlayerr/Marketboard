@@ -22,11 +22,25 @@ export async function getAllPriceSheets() {
 
 export async function getAllPlayerData() {
     let data = [];
+    console.log("Getting all player data from server...");
     try {
-        const response = await axios.get(`${host}/api/player`, {
-            body: JSON.stringify({searchName: "Synn"})
-        });
-        data = response.data;
+        let info = {};
+
+        let config = {
+            method: 'get',
+            maxBodyLength: Infinity,
+            url: 'http://localhost:8080/api/player?searchName=Synn',
+            headers: { },
+            data : info
+    };
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
     } catch (error) {
         console.error(error);
     }
