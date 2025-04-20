@@ -6,19 +6,28 @@ export default function FactoriesCard({ factories }) {
       <h2>Factories</h2>
       <ul>
         {factories &&
-          Object.entries(factories).map(([factoryName, factoryDetails]) => (
-            <li key={factoryName}>
-              <strong>{factoryName}</strong>
+          factories.map((factory) => (
+            <li key={factory.id}>
+              <strong>{factory.name}</strong>
               <ul>
                 <li>
                   Production:
                   <ul>
-                    {factoryDetails.Production &&
-                      Object.entries(factoryDetails.Production).map(([item, quantity]) => (
-                        <li key={item}>
-                          {item}: {quantity}
-                        </li>
-                      ))}
+                    {factory.production_sheet.output.map((output) => (
+                      <li key={output.good}>
+                        {output.good}: {output.quantity}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+                <li>
+                  Price:
+                  <ul>
+                    {factory.production_sheet.price.map((price) => (
+                      <li key={price.good}>
+                        {price.good}: {price.quantity}
+                      </li>
+                    ))}
                   </ul>
                 </li>
               </ul>

@@ -20,26 +20,36 @@ export async function getAllPriceSheets() {
     return data;
 }
 
-export async function getAllPlayerData() {
+export async function getPlayerData(playerUsername) {
     let data = {};
-    console.log("Getting all player data from server...");
+    console.log(`Getting player data for: ${playerUsername}`);
     try {
-        let info = {};
-
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: 'http://localhost:8080/api/player?searchName=Synn',
-            headers: {},
-            data: info
+            url: `${host}/api/player/${playerUsername}`, // Use dynamic playerUsername
+            headers: {}
         };
 
-        const response = await axios.request(config); // Use await here
-        data = response.data; // Update data after the request completes
+        const response = await axios.request(config);
+        data = response.data;
         console.log(data);
     } catch (error) {
         console.error(error);
+        data = {}; // Ensure an empty object is returned in case of an error
     }
-    return data; // Ensure this returns after the request completes
+    return data;
 }
 
+export async function getAllPlayers() {
+    let players = [];
+    console.log("Fetching all players...");
+    try {
+        const response = await axios.get(`${host}/api/players`);
+        players = response.data;
+        console.log(players);
+    } catch (error) {
+        console.error("Error fetching players:", error);
+    }
+    return players;
+}

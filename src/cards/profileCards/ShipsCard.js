@@ -6,19 +6,19 @@ export default function ShipsCard({ ships }) {
       <h2>Ships</h2>
       <ul>
         {ships &&
-          Object.entries(ships).map(([shipName, shipDetails]) => (
-            <li key={shipName}>
-              <strong>{shipName}</strong>
+          ships.map((ship) => (
+            <li key={ship.id}>
+              <strong>{ship.name}</strong>
               <ul>
-                <li>Speed: {shipDetails.Speed}</li>
-                <li>Status: {shipDetails.Status}</li>
+                <li>Speed: {ship.speed}</li>
+                <li>Status: {ship.status}</li>
                 <li>
                   Inventory:
                   <ul>
-                    {shipDetails.Inventory &&
-                      Object.entries(shipDetails.Inventory).map(([item, quantity]) => (
-                        <li key={item}>
-                          {item}: {quantity}
+                    {ship.inventory &&
+                      ship.inventory.map((item) => (
+                        <li key={item.item_name}>
+                          {item.item_name}: {item.quantity}
                         </li>
                       ))}
                   </ul>
