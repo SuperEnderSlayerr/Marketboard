@@ -1,13 +1,6 @@
 import axios from "axios";
-// import dotenv from "dotenv";
-// dotenv.config();
 
-const port = 8080; //This will need to be updated with offical .env variable for port in the future. Refer to line below:
-// const port = process.env.PORT || 8080;
-const host = "http://localhost:" + port; //This will need to be updated with offical .env variable for host in the future. Refer to line below:
-// const host = process.env.HOST || "http://localhost:" + port;
-
-console.log(host)
+const host = process.env.REACT_APP_BACKEND_URL
 
 export async function getAllPriceSheets() {
     let data = [];

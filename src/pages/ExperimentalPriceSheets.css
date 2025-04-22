@@ -4,6 +4,7 @@
     align-items: stretch; /* Ensures both cards are the same height */
     gap: 0.5rem; /* Spacing between cards in the row */
     margin-bottom: 0.5rem; /* Spacing between rows */
+    margin-top: 1rem; /* Adds space above the top row */
     padding: 0 0.5rem; /* Adds space on the left and right of the row */
 }
 
