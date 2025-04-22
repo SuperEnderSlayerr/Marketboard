@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../../components/Card";
 import "./DataCard.css";
 
-const DataCard = ({ priceSheetData }) => {
+const DataCard = ({ goodPriceData }) => {
     return (
         <Card className="data_card">
             <h3>Price Sheet Data</h3>
@@ -15,7 +15,7 @@ const DataCard = ({ priceSheetData }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {priceSheetData.map((item, index) => (
+                    {goodPriceData.map((item, index) => (
                         <tr key={index}>
                             <td className="data_table_cell">{item.city}</td>
                             <td className="data_table_cell">{item.name}</td>

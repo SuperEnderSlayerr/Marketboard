@@ -14,7 +14,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack items vertically */
 }
 
 .info_card_list li {

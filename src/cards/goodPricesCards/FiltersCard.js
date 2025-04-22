@@ -3,12 +3,12 @@ import Select from "react-select";
 import Card from "../../components/Card";
 import "./FiltersCard.css";
 
-const FiltersCard = ({ priceSheetData, filters, setFilters }) => {
+const FiltersCard = ({ goodPriceData, filters, setFilters }) => {
 
     // Transform the data into a flat array of objects
-    const validData = Array.isArray(priceSheetData)
-        ? priceSheetData
-        : Object.entries(priceSheetData || {}).flatMap(([city, items]) =>
+    const validData = Array.isArray(goodPriceData)
+        ? goodPriceData
+        : Object.entries(goodPriceData || {}).flatMap(([city, items]) =>
               Object.entries(items).map(([name, price]) => ({
                   city,
                   name,

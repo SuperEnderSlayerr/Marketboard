@@ -1,7 +1,0 @@
-.city_card_container {
-	display: flex;
-	flex-wrap: wrap; /* Allow wrapping to the next row */
-	justify-content: flex-start; /* Align cards to the start of the row */
-	gap: 1rem; /* Add spacing between rows and columns */
-  }
-  

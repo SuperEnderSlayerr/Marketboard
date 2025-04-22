@@ -1,4 +1,4 @@
-.experimental_pricesheets .row {
+.goodprices .row {
     display: flex;
     flex-direction: row;
     align-items: stretch; /* Ensures both cards are the same height */
@@ -8,7 +8,7 @@
     padding: 0 0.5rem; /* Adds space on the left and right of the row */
 }
 
-.experimental_pricesheets .info_card_container {
+.goodprices .info_card_container {
     flex: 1;
     max-width: 25%;
     display: flex;
@@ -16,7 +16,7 @@
     margin: 0; /* Remove extra margin to rely on row gap */
 }
 
-.experimental_pricesheets .filters_card_container {
+.goodprices .filters_card_container {
     flex: 3;
     max-width: 75%;
     display: flex;
@@ -24,7 +24,7 @@
     margin: 0; /* Remove extra margin to rely on row gap */
 }
 
-.experimental_pricesheets .data_card_container {
+.goodprices .data_card_container {
     display: flex;
     flex-direction: column;
     margin: 0; /* Remove extra margin to rely on row gap */

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const host = process.env.REACT_APP_BACKEND_URL
 
-export async function getAllPriceSheets() {
+export async function getAllGoodPrices() {
     let data = [];
     try {
         const response = await axios.get(`${host}/api/prices`);
@@ -43,4 +43,16 @@ export async function getAllPlayers() {
         console.error("Error fetching players:", error);
     }
     return players;
+}
+
+export async function getAllData() {
+    let data = [];
+    console.log("Fetching all data...");
+    try {
+        const response = await axios.get(`${host}/api/alldata`);
+        data = response.data;
+    } catch (error) {
+        console.error("Error fetching all data:", error);
+    }
+    return data;
 }
