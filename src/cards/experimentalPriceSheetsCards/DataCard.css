@@ -1,0 +1,19 @@
+.data_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data_table_header {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px dashed black; /* Changed to dashed black lines */
+}
+
+.data_table_price {
+    text-align: right;
+}
+
+.data_table_cell {
+    padding: 8px;
+    border-bottom: 1px dashed black; /* Changed to dashed black lines */
+}

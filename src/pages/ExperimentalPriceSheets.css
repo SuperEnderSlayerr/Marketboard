@@ -1,0 +1,33 @@
+.experimental_pricesheets .row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* Ensures both cards are the same height */
+    gap: 0.5rem; /* Spacing between cards in the row */
+    margin-bottom: 0.5rem; /* Spacing between rows */
+    padding: 0 0.5rem; /* Adds space on the left and right of the row */
+}
+
+.experimental_pricesheets .info_card_container {
+    flex: 1;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Remove extra margin to rely on row gap */
+}
+
+.experimental_pricesheets .filters_card_container {
+    flex: 3;
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Remove extra margin to rely on row gap */
+}
+
+.experimental_pricesheets .data_card_container {
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Remove extra margin to rely on row gap */
+    padding: 0.5rem; /* Adds padding inside the container */
+    border-radius: 8px; /* Adds rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}

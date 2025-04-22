@@ -44,7 +44,6 @@ export default function Profile() {
                 if (!response || !response.player) {
                     throw new Error("Invalid player data received");
                 }
-                console.log(response);
                 setPlayerData(response.player); // Extract the "player" object
             } catch (err) {
                 setError("Failed to fetch player data");

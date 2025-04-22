@@ -1,0 +1,9 @@
+.filters_card {
+    padding: 1rem;
+    overflow: visible; /* Allow content to overflow outside the card */
+    position: relative; /* Ensure the card is positioned relative for dropdown positioning */
+}
+
+.filters_card_field {
+    margin-bottom: 1rem;
+}

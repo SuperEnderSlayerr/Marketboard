@@ -2,6 +2,8 @@ import PageBackground from "./PageBackground.js"
 import PageSelectionMenu from "./components/PageSelectionMenu.js";
 import PriceSheets from "./pages/PriceSheets.js";
 import Profile from "./pages/Profile.js";
+import Map from "./pages/Map.js";
+import ExperimentalPriceSheets from "./pages/ExperimentalPriceSheets.js";
 import { useState } from "react";
 
 export default function App() {
@@ -13,6 +15,10 @@ export default function App() {
 			return <PriceSheets />
 		case "Profile":
 			return <Profile />
+		case "Map":
+			return <Map />
+		case "Experimental":
+			return <ExperimentalPriceSheets />
 		  default:
 			return <p>Pick a Page.</p>
 		}

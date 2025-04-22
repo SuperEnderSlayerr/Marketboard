@@ -1,0 +1,24 @@
+.info_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is evenly spaced */
+    height: 100%; /* Ensures it stretches to match other cards */
+}
+
+.info_card_text {
+    margin-bottom: 0.5rem;
+}
+
+.info_card_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info_card_list li {
+    margin: 0;
+    padding: 0.2rem 0;
+    white-space: nowrap; /* Prevents text wrapping */
+}

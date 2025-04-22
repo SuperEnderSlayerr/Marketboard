@@ -33,7 +33,6 @@ export async function getPlayerData(playerUsername) {
 
         const response = await axios.request(config);
         data = response.data;
-        console.log(data);
     } catch (error) {
         console.error(error);
         data = {}; // Ensure an empty object is returned in case of an error
@@ -47,7 +46,6 @@ export async function getAllPlayers() {
     try {
         const response = await axios.get(`${host}/api/players`);
         players = response.data;
-        console.log(players);
     } catch (error) {
         console.error("Error fetching players:", error);
     }
