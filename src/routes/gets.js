@@ -45,14 +45,21 @@ export async function getAllPlayers() {
     return players;
 }
 
-export async function getAllData() {
-    let data = [];
-    console.log("Fetching all data...");
+export async function getCoordsData() {
+    let coordsData = [];
+    console.log("Fetching coordinates data...");
     try {
         const response = await axios.get(`${host}/api/alldata`);
-        data = response.data;
+        const allData = response.data;
+
+        // Extract only the `coords` field from each entry
+        coordsData = allData.map(entry => ({
+            id: entry.id,
+            name: entry.name,
+            coords: entry.coords,
+        }));
     } catch (error) {
-        console.error("Error fetching all data:", error);
+        console.error("Error fetching coordinates data:", error);
     }
-    return data;
+    return coordsData;
 }

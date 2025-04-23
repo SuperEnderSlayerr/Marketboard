@@ -4,7 +4,7 @@ import Profile from "./pages/Profile.js";
 import Map from "./pages/Map.js";
 import GoodPrices from "./pages/GoodPrices.js";
 import { useState, useEffect } from "react";
-import { getAllGoodPrices, getAllPlayers, getPlayerData, getAllData } from "./routes/gets.js";
+import { getAllGoodPrices, getAllPlayers, getPlayerData, getCoordsData } from "./routes/gets.js";
 
 export default function App() {
     const [pageToDisplay, setPageToDisplay] = useState("Good Prices");
@@ -12,7 +12,7 @@ export default function App() {
     const [players, setPlayers] = useState([]);
     const [selectedPlayer, setSelectedPlayer] = useState(null);
     const [playerData, setPlayerData] = useState(null);
-    const [allData, setAllData] = useState([]);
+    const [coordsData, setCoordsData] = useState([]);
     const [filters, setFilters] = useState({ city: [], item: [] }); // Moved filters state here
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -24,11 +24,11 @@ export default function App() {
                 const [goodPricesData, playersData, allDataResponse] = await Promise.all([
                     getAllGoodPrices(),
                     getAllPlayers(),
-                    getAllData(),
+                    getCoordsData(),
                 ]);
                 setGoodPrices(goodPricesData);
                 setPlayers(playersData);
-                setAllData(allDataResponse);
+                setCoordsData(allDataResponse);
 
                 // Automatically select the first player if available
                 if (playersData.length > 0) {
@@ -95,7 +95,13 @@ export default function App() {
                     />
                 );
             case "Map":
-                return <Map allData={allData} />;
+                return (
+                    <Map
+                        coordsData={coordsData}
+                        goodPrices={goodPrices}
+                        filters={filters}
+                    />
+                );
             default:
                 return <p>Pick a Page.</p>;
         }

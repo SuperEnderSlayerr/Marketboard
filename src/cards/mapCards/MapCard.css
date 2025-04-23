@@ -1,0 +1,78 @@
+.map_card {
+    margin: 20px;
+    max-width: calc(100% - 40px); /* Ensure the card fits within the screen, accounting for margins */
+    overflow: auto; /* Allow scrolling if the content overflows */
+}
+
+.map_container {
+    display: grid;
+    grid-template-columns: repeat(10, 50px); /* 10 columns, each 50px wide */
+    grid-template-rows: repeat(10, 50px);   /* 10 rows, each 50px tall */
+    gap: 5px; /* Space between grid cells */
+    background-color: #e0c097; /* A darker parchment color for the grid */
+    border: 2px solid #8b5a2b; /* Dark brown border for the grid */
+    width: fit-content;
+    position: relative;
+    padding: 10px; /* Add padding inside the grid */
+}
+
+.city_marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d4af37; /* Gold-like color for city markers */
+    color: #000; /* Black text for contrast */
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border: 1px solid #8b5a2b; /* Dark brown border for markers */
+}
+
+.city_marker:hover {
+    transform: scale(1.2); /* Enlarge marker on hover */
+    background-color: #f4d03f; /* Brighter gold on hover */
+    z-index: 10; /* Bring to front */
+}
+
+.city_name {
+    position: absolute;
+    top: 45px; /* Position below the marker */
+    font-size: 10px;
+    color: #4a2c2a; /* Dark brown text for a pirate theme */
+    white-space: nowrap;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    pointer-events: none; /* Prevent the tooltip from interfering with mouse events */
+    font-size: 12px;
+    max-width: 200px;
+}
+
+.tooltip h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tooltip ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tooltip li {
+    margin: 2px 0;
+}
